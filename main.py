@@ -8,7 +8,7 @@ from typing import List, Dict, Any
 class CurrencyFetcher:
     BASE_URL = "https://api.privatbank.ua/p24api/exchange_rates?json&date="
 
-    def init(self, days: int):
+    def __init__(self, days: int):
         self.days = days
         self.dates = self.get_dates()
 
@@ -43,7 +43,7 @@ class CurrencyFetcher:
 
 
 class CurrencyRateService:
-    def init(self, days: int):
+    def __init__(self, days: int):
         self.days = days
 
     async def get_currency_rates(self) -> List[Dict[str, Any]]:
